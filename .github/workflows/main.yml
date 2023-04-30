@@ -1,0 +1,26 @@
+# This workflow will triage pull requests and apply a label based on the
+# paths that are modified in the pull request.
+#
+# To use this workflow, you will need to set up a .github/labeler.yml
+# file with configuration.  For more information, see:
+# https://github.com/actions/labeler
+
+
+        
+name: cypressgoitnauka@1.0.0
+
+on: push
+
+jobs:
+  cypress-run:
+    runs-on: Windows 10 Pro
+    steps:
+      - name: Checkout
+        uses:  actions/checkout@v3
+
+     
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          build: npm run
+          start: npm start
